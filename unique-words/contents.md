@@ -1,26 +1,27 @@
 # Unique words Shakespeare classifier
-The aim is to construct a classifier capable of discerning Shakespearean text fragments. This task involves evaluating a set of words characteristic of Shakespearean writing to gauge and categorize the fragments.
+The aim is to program a classifier capable of decide if text fragments are written by Shakespeare. This task involves a set of words characteristic of Shakespearean writing to categorize the fragments.
 
-This classifier maintains a straightforward design, rooted in the frequency of word overlaps between the text fragments and the predetermined Shakespearean word inventory.
+This classifier has a straightforward design, based on the frequency of word overlaps between the text fragments and the pre-generated Shakespearean word list.
 
 For instance, let's consider the following sequence of words as representative of Shakespearean language:
 
 _wassail, halcyon, cannoneer, darnel, beggarly, dispraise_
 
-With this list, we can assess the following text and assign it a score based on the relative occurrence of Shakespearean words. Here is the example text:
+With this list, we can evaluate the following text and assign it a score based on the relative occurrence of Shakespearean words. Here is the example text:
 
 "In the **halcyon** days of yore, we reveled amidst fields of golden **darnel**, a **beggarly** intrusion among nature's grandeur. The mirthful melodies of the **wassail** danced upon the breeze, while **beggarly** worries scattered like autumn leaves."
 
 This text would yield a _Shakespeare score_ of approximately $$0.139$$, as it contains 4 distinct words from the Shakespearean word list (note that *beggarly* appears twice, but multiple occurrences are not counted at this stage). The total count of unique words in the text is $$29$$, yielding a score of $$4/29 \approx 0.139$$.
 
-Assuming that higher scores indicate a higher likelihood of Shakespearean authorship, while lower scores indicate the opposite, we can formulate a simple classification mechanism. This involves setting a threshold (e.g., $$0.02$$). For all texts surpassing this threshold, we predict them as having been written by Shakespeare. Therefore, the provided text would be positively classified (as Shakespearean) due to its score exceeding $$0.02$$ (specifically, $$0.139$$).
+Assuming that higher scores indicate a higher likelihood of Shakespearean authorship, while lower scores indicate the opposite, we can formulate a simple classification mechanism. This involves setting a threshold (e.g., $$0.02$$). For all texts with a higher score than this threshold, we predict them as having been written by Shakespeare. So the provided text would be positively classified (as Shakespearean) because it has score higher score than $$0.02$$ (i.e., $$0.139$$).
 
-This algorithm will be implemented through several phases. Initially (phase 1), a precomputed compilation of Shakespearean words will be provided. The task involves using this compilation to calculate the _Shakespeare score_ for a given text and subsequently categorizing it based on a designated threshold. Subsequently (phase 2), the compilation of Shakespearean words will be computed from a set of provided text fragments.
+This algorithm will be implemented through several phases. Initially (phase 1), a precomputed compilation of Shakespearean words will be provided. The task involves using this compilation to calculate the _Shakespeare score_ for a given text and then categorizing it based on a designated threshold. After this (phase 2), you will write an algorithm to generate the list of Shakespearean words from a set of provided text fragments.
 
 ## Specification Phase 1
 
 The process for classifying text fragments involves the following sequence of steps:
 
+0. Download the data for this assignment: [shakespeare data](shakespeare-data.zip)
 1. Read a file containing text fragments and transform it into a set of distinct words.
 2. Compute the _Shakespeare score_ for the text.
 3. Identify the optimal threshold:
