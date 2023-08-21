@@ -1,5 +1,5 @@
-# Unique words Shakespeare classifier
-The aim is to program a classifier capable of decide if text fragments are written by Shakespeare. This task involves a set of words characteristic of Shakespearean writing to categorize the fragments.
+# Simple Shakespeare classifier
+The aim is to program a classifier capable of deciding if text fragments are written by Shakespeare. This task involves a set of words characteristic of Shakespearean writing to categorize the fragments.
 
 This classifier has a straightforward design, based on the frequency of word overlaps between the text fragments and the pre-generated Shakespearean word list.
 
