@@ -133,7 +133,7 @@ The following function uses filenames to determine the expected classification r
 
 ```python
 def is_written_by_shakespeare(text_file_names):
-    """Checks for each file name in the list of text_file_names if it the corresponding 
+    """Checks for each file name in the list of text_file_names if it the corresponding
     file contains text that is written by Shakespeare. It is assumed that files are
     formatted as [writer].[fragment number].txt"""
     results = []
