@@ -8,11 +8,11 @@ We can apply a similar approach to analyze text fragments and use TF-IDF to figu
 
 Once we have these scores, we have various options to classify text fragments based on them. However, for this task, let's keep it simple: We'll just add up the scores for each word in the text portion to get the overall score of that part. Consider the following TF-IDF scores:
 
-  thy, 0.058
-  love, 0.046
-  neighbor, 0
-  and, 0
-  cat, 0
+    thy, 0.058
+    love, 0.046
+    neighbor, 0
+    and, 0
+    cat, 0
 
 Using these scores, the text fragment "Love thy neighbor and thy cat" receives a total score of $$0.046 + 0.058 + 0 + 0 + 0.058 + 0 = 0.162$$. It's important to note that (unlike the previous task), repeated occurrences of a word in the text portion are included in this calculation.
 
