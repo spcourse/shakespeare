@@ -18,10 +18,10 @@ The authors of the book describe their use of various techniques to characterize
 
 In this module, we will implement two distinct methods for determining whether a text was written by Shakespeare.
 
-> Note: Note: In the field of machine learning, such a problem is called as a _classification_ problem. Our goal is to categorize text fragments into two distinct classes: those belonging to the _class_ of fragments written by Shakespeare and those belonging to the _class_ of fragments _not_ written by Shakespeare.
+> Note: In the field of machine learning, such a problem is called as a _classification_ problem. Our goal is to categorize text fragments into two distinct classes: those belonging to the _class_ of fragments written by Shakespeare and those belonging to the _class_ of fragments _not_ written by Shakespeare.
 
 Both approaches revolve around analyzing the vocabulary used.
 
-For the first approach, we will compile a set of words that are characteristic of texts penned by Shakespeare. For instance, 'Macbeth' might be a word exclusive to Shakespeare's usage, whereas the term 'speed' is likely used by many other writers. In this approach, we will classify text fragments by counting the number of these distinct Shakespearean words they contain.
+For the first approach, we will compile a set of words that are characteristic of texts written by Shakespeare. For instance, 'Macbeth' might be a word exclusive to Shakespeare's usage, whereas the term 'speed' is likely used by many other writers. In this approach, we will classify text fragments by counting the number of these distinct Shakespearean words they contain.
 
 The second approach is somewhat similar but slightly more nuanced. Words will be assigned scores that indicate their relevance to Shakespearean writing. For instance, 'Macbeth' has a relatively high score of 0.017, suggesting its strong association with Shakespeare's works. On the other hand, 'speed' has a relatively low score of 0.003, implying its potential usage by various authors. Furthermore, 'villain' obtains an intermediate score of 0.007, suggesting it could signify Shakespearean writing to some extent, though not definitively.

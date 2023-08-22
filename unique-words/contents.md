@@ -22,7 +22,7 @@ This algorithm will be implemented through several phases. Initially (phase 1), 
 The process for classifying text fragments involves the following sequence of steps:
 
 0. Download the data for this assignment: [shakespeare data](shakespeare-data.zip)
-1. Read a file containing text fragments and transform it into a set of distinct words.
+1. Read a file containing text fragments and transform it into a `set` of distinct words.
 2. Compute the _Shakespeare score_ for the text.
 3. Identify the optimal threshold:
    - Obtain a _test set_ by gathering collections of text fragments with known Shakespearean authorship status, forming a _test set_.
@@ -41,7 +41,7 @@ The process for classifying text fragments involves the following sequence of st
     - Exclude words that still contain non-alphabetic characters after cleanup.
     - Return a `set` containing only unique words.
 
-Copy the following code into your Python file. It includes test cases for your function:
+Copy the following code into your Python file. It includes some test cases for your function:
 
 ```python
 def main():
@@ -203,4 +203,6 @@ print('Accuracy:', accuracy)
 
 - **Extend** the `main()` function to iterate through multiple threshold values, running the prediction and evaluation steps. Experiment with values between 0 and 0.1 in 40 steps. Visualize the results. The visualization should resemble the figure below:
 
-![embed](unique-word-classifier)
+![](unique-word-classifier.png)
+
+Save the resulting figure as `unique-word-classifier.png`.
