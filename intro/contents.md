@@ -12,7 +12,7 @@ It turns out that the answer is: yes... maybe?
 
 Hugh Craig and Arthur F. Kinney have attempted to do precisely this and have written an entire book on their findings: "Shakespeare by the Numbers: What Stylometrics Can and Cannot Tell Us." You might not immediately want to purchase and read a book on a subject that you might have only first heard of three paragraphs ago. However, if you are interested, the following book review provides a concise summary: [Review Craig & Kinney](https://shakespeareoxfordfellowship.org/shakespeare-by-the-numbers-what-stylometrics-can-and-cannot-tell-us/)
 
-The main question is: Is it possible to ascertain whether a given text fragment is authored by Shakespeare?
+The main question is: Is it possible to use a computer to predict whether a given text fragment is written by Shakespeare?
 
 The authors of the book describe their use of various techniques to characterize Shakespeare's writing style. Most of these techniques go beyond the scope of this course. However, we can explore whether a simpler approach might yield interesting results.
 
