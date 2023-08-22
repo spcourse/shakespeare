@@ -36,7 +36,7 @@ The process for classifying text fragments involves the following sequence of st
 - **Create** a file named `unique-word-classifier.py` and ensure it resides in the same directory as the `test-set` and `training-set` folders.
 - Inside this file, **implement** the function `to_set(text)`. This function tokenizes the text and converts it into a set:
     - Split the text on spaces.
-    - Remove leading and trailing punctuation from each word. Punctuation characters include: ' ' (space), ',', ';', '.', ':', "'", '"', '[', ']', '(', ')', '-', '_', '?', and '!'.
+    - Remove leading and trailing punctuation from each word. Punctuation characters include: ` ` (space), `,`, `;`, `.`, `:`, `'`, `"`, `[`, `]`, `(`, `)`, `-`, `_`, `?`, and `!`.
     - Convert all words to lowercase.
     - Exclude words that still contain non-alphabetic characters after cleanup.
     - Return a `set` containing only unique words.

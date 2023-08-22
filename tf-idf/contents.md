@@ -8,13 +8,11 @@ We can apply a similar approach to analyze text fragments and use TF-IDF to figu
 
 Once we have these scores, we have various options to classify text fragments based on them. However, for this task, let's keep it simple: We'll just add up the scores for each word in the text portion to get the overall score of that part. Consider the following TF-IDF scores:
 
-```
-thy, 0.058
-love, 0.046
-neighbor, 0
-and, 0
-cat, 0
-```
+  thy, 0.058
+  love, 0.046
+  neighbor, 0
+  and, 0
+  cat, 0
 
 Using these scores, the text fragment "Love thy neighbor and thy cat" receives a total score of $$0.046 + 0.058 + 0 + 0 + 0.058 + 0 = 0.162$$. It's important to note that (unlike the previous task), repeated occurrences of a word in the text portion are included in this calculation.
 
@@ -40,7 +38,7 @@ The process for classifying text fragments is similar to the previous assignment
 - **Create** a file named `tf-idf-classifier.py` and ensure it resides in the same directory as the `test-set` and `training-set` folders.
 - Inside this file, **implement** the function `to_list(text)`. This function tokenizes the text and converts it into a set:
   - Split the text on spaces.
-  - Remove leading and trailing punctuation from each word. Punctuation characters include: ' ' (space), ',', ';', '.', ':', "'", '"', '[', ']', '(', ')', '-', '_', '?', and '!'.
+  - Remove leading and trailing punctuation from each word. Punctuation characters include: ` ` (space), `,`, `;`, `.`, `:`, `'`, `"`, `[`, `]`, `(`, `)`, `-`, `_`, `?`, and `!`.
   - Convert all words to lowercase.
   - Exclude words that still contain non-alphabetic characters after cleanup.
   - Return a `list` containing all the remaining words.
