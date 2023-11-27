@@ -12,7 +12,7 @@ It turns out that the answer is: yes... maybe?
 
 Hugh Craig and Arthur F. Kinney have attempted to do precisely this and have written an entire book on their findings: "Shakespeare by the Numbers: What Stylometrics Can and Cannot Tell Us." You might not immediately want to purchase and read a book on a subject that you might have only first heard of three paragraphs ago. However, if you are interested, the following book review provides a concise summary: [Review Craig & Kinney](https://shakespeareoxfordfellowship.org/shakespeare-by-the-numbers-what-stylometrics-can-and-cannot-tell-us/)
 
-The main question is: Is it possible to use a computer to predict whether a given text fragment is written by Shakespeare?
+**The main question is: Is it possible to use a computer to predict whether a given text fragment is written by Shakespeare?**
 
 The authors of the book describe their use of various techniques to characterize Shakespeare's writing style. Most of these techniques go beyond the scope of this course. However, we can explore whether a simpler approach might yield interesting results.
 
@@ -24,4 +24,4 @@ Both approaches revolve around analyzing the vocabulary used.
 
 For the first approach, we will compile a set of words that are characteristic of texts written by Shakespeare. For instance, 'Macbeth' might be a word exclusive to Shakespeare's usage, whereas the term 'speed' is likely used by many other writers. In this approach, we will classify text fragments by counting the number of these distinct Shakespearean words they contain.
 
-The second approach is somewhat similar but slightly more nuanced. Words will be assigned scores that indicate their relevance to Shakespearean writing. For instance, 'Macbeth' has a relatively high score of 0.017, suggesting its strong association with Shakespeare's works. On the other hand, 'speed' has a relatively low score of 0.003, implying its potential usage by various authors. Furthermore, 'villain' obtains an intermediate score of 0.007, suggesting it could signify Shakespearean writing to some extent, though not definitively.
+The second approach is somewhat similar but slightly more complex. Words will be assigned scores that indicate their relevance to Shakespearean writing. For instance, 'Macbeth' has a relatively high score of 0.017, suggesting its strong association with Shakespeare's works. On the other hand, 'speed' has a relatively low score of 0.003, implying its potential usage by various authors. Furthermore, 'villain' obtains an intermediate score of 0.007, suggesting it could signify Shakespearean writing to some extent, though not definitively.

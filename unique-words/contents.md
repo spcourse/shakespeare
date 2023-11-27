@@ -43,34 +43,34 @@ The process for classifying text fragments involves the following sequence of st
 
 Copy the following code into your Python file. It includes some test cases for your function:
 
-```python
-def main():
-    test1 = "Hello world! This is a test."
-    print(to_set(test1))
-    # Expected output (order might differ):
-    # {'world', 'test', 'is', 'this', 'a', 'hello'}
 
-    test2 = "Programming is FUN! Let's code."
-    print(to_set(test2))
-    # Expected output (order might differ):
-    # {'programming', 'code', 'is', 'fun'}
+    def main():
+        test1 = "Hello world! This is a test."
+        print(to_set(test1))
+        # Expected output (order might differ):
+        # {'world', 'test', 'is', 'this', 'a', 'hello'}
 
-    test3 = "-human: 'Hello, world!' -human: 'How's life?' -computer: 'I'm [computer: red] doing _well_ (I think); thank you.'"
-    print(to_set(test3))
-    # Expected output (order might differ):
-    # {'red', 'computer', 'think', 'world', 'human', 'thank', 'you', 'life', 'doing', 'hello', 'well', 'i'}
+        test2 = "Programming is FUN! Let's code."
+        print(to_set(test2))
+        # Expected output (order might differ):
+        # {'programming', 'code', 'is', 'fun'}
 
-    with open('test-set/shakespeare.0493.txt') as file:
-        print(to_set(file.read()))
-    # Expected output (order might differ):
-    # {'his', 'fathers', 'nothing', 'traitor', 'daughters', 'begot', 'mercy', 'a', 'have', 'it', 'their',
-    #  'on', 'such', 'flesh', 'to', 'should', 'that', 'lowness', 'is', 'judicious', 'punishment', 'unkind',
-    #  'could', 'death', 'fashion', 'little', 'but', 'the', 'discarded', 'thus', 'pelican', 'this', 'lear',
-    #  'those', 'nature'}
+        test3 = "-human: 'Hello, world!' -human: 'How's life?' -computer: 'I'm [computer: red] doing _well_ (I think); thank you.'"
+        print(to_set(test3))
+        # Expected output (order might differ):
+        # {'red', 'computer', 'think', 'world', 'human', 'thank', 'you', 'life', 'doing', 'hello', 'well', 'i'}
+
+        with open('test-set/shakespeare.0493.txt') as file:
+            print(to_set(file.read()))
+        # Expected output (order might differ):
+        # {'his', 'fathers', 'nothing', 'traitor', 'daughters', 'begot', 'mercy', 'a', 'have', 'it', 'their',
+        #  'on', 'such', 'flesh', 'to', 'should', 'that', 'lowness', 'is', 'judicious', 'punishment', 'unkind',
+        #  'could', 'death', 'fashion', 'little', 'but', 'the', 'discarded', 'thus', 'pelican', 'this', 'lear',
+        #  'those', 'nature'}
 
 if __name__ == '__main__':
     main()
-```
+
 
 ### Step 2
 
@@ -79,26 +79,24 @@ if __name__ == '__main__':
 
 Test your functions using the following code:
 
-```python
-test_text = """In the halcyon days of yore, we reveled amidst fields of golden darnel,
-a beggarly intrusion among nature's grandeur. The mirthful melodies of the wassail danced upon the breeze,
- while beggarly worries scattered like autumn leaves"""
+    test_text = """In the halcyon days of yore, we reveled amidst fields of golden darnel,
+    a beggarly intrusion among nature's grandeur. The mirthful melodies of the wassail danced upon the breeze,
+     while beggarly worries scattered like autumn leaves"""
 
-test_words = set(['wassail', 'halcyon', 'cannoneer', 'darnel', 'beggarly', 'dispraise'])
-print('Score:', calculate_shakespeare_score(test_text, test_words))
-# Expected output:
-# Score: 0.13793103448275862
+    test_words = set(['wassail', 'halcyon', 'cannoneer', 'darnel', 'beggarly', 'dispraise'])
+    print('Score:', calculate_shakespeare_score(test_text, test_words))
+    # Expected output:
+    # Score: 0.13793103448275862
 
-shakespeare_words = load_shakespeare_words()
-print('Amount of Shakespeare words:', len(shakespeare_words))
-# Expected output:
-# Amount of Shakespeare words: 3040
+    shakespeare_words = load_shakespeare_words()
+    print('Amount of Shakespeare words:', len(shakespeare_words))
+    # Expected output:
+    # Amount of Shakespeare words: 3040
 
-with open('test-set/shakespeare.0493.txt') as file:
-    print('Score of shakespeare.0493.txt', calculate_shakespeare_score(file.read(), shakespeare_words))
-# Expected output:
-# Score of shakespeare.0493.txt 0.02857142857142857
-```
+    with open('test-set/shakespeare.0493.txt') as file:
+        print('Score of shakespeare.0493.txt', calculate_shakespeare_score(file.read(), shakespeare_words))
+    # Expected output:
+    # Score of shakespeare.0493.txt 0.02857142857142857
 
 ### Step 3
 
@@ -106,57 +104,55 @@ with open('test-set/shakespeare.0493.txt') as file:
 
 The following function retrieves the names of all `.txt` files in a specified folder:
 
-```python
-def get_text_file_names(path, extension='txt'):
-    """This function searches for all file names in [path] that have [exetension]"""
-    return list(Path(path).glob(f'*.{extension}'))
-```
+
+    def get_text_file_names(path, extension='txt'):
+        """This function searches for all file names in [path] that have [exetension]"""
+        return list(Path(path).glob(f'*.{extension}'))
+
 
 Ensure you import `Path` from `pathlib` at the top of your file:
 
-```python
-from pathlib import Path
-```
+
+    from pathlib import Path
+
 
 You can test this function using the following code:
 
-```python
-test_files_dir = Path('test-set')
-filenames = get_text_file_names(test_files_dir)
-print('Number of .txt files:', len(filenames))
-# Expected output:
-# Number of .txt files: 485
-```
+
+    test_files_dir = Path('test-set')
+    filenames = get_text_file_names(test_files_dir)
+    print('Number of .txt files:', len(filenames))
+    # Expected output:
+    # Number of .txt files: 485
 
 #### Determine Expected Results
 
 The following function uses filenames to determine the expected classification results:
 
-```python
-def is_written_by_shakespeare(text_file_names):
-    """Checks for each file name in the list of text_file_names if it the corresponding
-    file contains text that is written by Shakespeare. It is assumed that files are
-    formatted as [writer].[fragment number].txt"""
-    results = []
-    for file_name in text_file_names:
-        results.append(file_name.name.split('.')[0] == "shakespeare")
-    return results
-```
+    def is_written_by_shakespeare(text_file_names):
+        """Checks for each file name in the list of text_file_names if it the corresponding
+        file contains text that is written by Shakespeare. It is assumed that files are
+        formatted as [writer].[fragment number].txt"""
+        results = []
+        for file_name in text_file_names:
+            results.append(file_name.name.split('.')[0] == "shakespeare")
+        return results
+
 
 Test this function with:
 
-```python
-print(is_written_by_shakespeare(
-    [Path('shakespeare.0100.txt'), Path('marlow.0100.txt'), Path('shakespeare.foo.bar')])
-)
-# Expected output:
-# [True, False, True]
 
-is_shakespeare = is_written_by_shakespeare(filenames)
-print(is_shakespeare[225:235])
-# Expected output:
-# [False, False, False, False, False, False, True, True, True, True]
-```
+    print(is_written_by_shakespeare(
+        [Path('shakespeare.0100.txt'), Path('marlow.0100.txt'), Path('shakespeare.foo.bar')])
+    )
+    # Expected output:
+    # [True, False, True]
+
+    is_shakespeare = is_written_by_shakespeare(filenames)
+    print(is_shakespeare[225:235])
+    # Expected output:
+    # [False, False, False, False, False, False, True, True, True, True]
+
 
 #### Predict
 
@@ -166,20 +162,20 @@ print(is_shakespeare[225:235])
 
 Test your code with:
 
-```python
-scores = calculate_scores(filenames, shakespeare_words)
-print(scores[225:235])
-# Expected output:
-# [0.0, 0.013245033112582781, 0.0, 0.013333333333333334, 0.010101010101010102,
-# 0.012345679012345678, 0.06321839080459771, 0.06666666666666667, 0.03333333333333333,
-# 0.09230769230769231]
 
-threshold = 0.02
-predicted_shakespeare = predict_shakespeare(scores, threshold)
-print(predicted_shakespeare[225:235])
-# Expected output:
-# [False, False, False, False, False, False, True, True, True, True]
-```
+    scores = calculate_scores(filenames, shakespeare_words)
+    print(scores[225:235])
+    # Expected output:
+    # [0.0, 0.013245033112582781, 0.0, 0.013333333333333334, 0.010101010101010102,
+    # 0.012345679012345678, 0.06321839080459771, 0.06666666666666667, 0.03333333333333333,
+    # 0.09230769230769231]
+
+    threshold = 0.02
+    predicted_shakespeare = predict_shakespeare(scores, threshold)
+    print(predicted_shakespeare[225:235])
+    # Expected output:
+    # [False, False, False, False, False, False, True, True, True, True]
+
 
 #### Evaluate
 
@@ -187,17 +183,16 @@ print(predicted_shakespeare[225:235])
 
 Test your code with:
 
-```python
-actual = [True, False, True, False]
-predicted = [True, True, True, False]
-accuracy = calculate_accuracy(actual, predicted)
-print('Accuracy:', accuracy)
-# Expected output: Accuracy: 0.75
+    actual = [True, False, True, False]
+    predicted = [True, True, True, False]
+    accuracy = calculate_accuracy(actual, predicted)
+    print('Accuracy:', accuracy)
+    # Expected output: Accuracy: 0.75
 
-accuracy = calculate_accuracy(is_shakespeare, predicted_shakespeare)
-print('Accuracy:', accuracy)
-# Expected output: Accuracy: 0.7835051546391752
-```
+    accuracy = calculate_accuracy(is_shakespeare, predicted_shakespeare)
+    print('Accuracy:', accuracy)
+    # Expected output: Accuracy: 0.7835051546391752
+
 
 #### Repeat
 
