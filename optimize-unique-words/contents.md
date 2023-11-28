@@ -82,6 +82,7 @@ Tips:
 * Even though you're interested in only the running time of `calculate_shakespeare_score` it might require adaptations elsewhere in the code.
 * If done correctly, the modifications should make the code shorter and clearer, not more complicated.
 * You can test the running time of the function `calculate_shakespeare_score` using the `timeit` library. Add the following code at the end of your file:
+
         import timeit
         time = timeit.timeit("calculate_shakespeare_score(text, shakespeare_words)",
         setup =
@@ -91,4 +92,5 @@ Tips:
             text = file.read()
         """, number=1000)
         print(time)
+
     This will run the function a 1000 times and print the total running time. The precise numbers will depend a lot on the machine you are running your code on. But on my machine, the running time before optimization is around 2 seconds and after optimization it is around 0.03 seconds. **So it runs two orders of magnitudes faster, by using sets.**
