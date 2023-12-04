@@ -20,7 +20,7 @@ In this assignment you will be provided with a precomputed compilation of Shakes
 
 ## Provided example.
 
-Download the data for this assignment: [shakespeare data](shakespeare-data.zip). To kick you off, this `.zip` contains some example code. The file `unique-word-classifier.py` contains a program that will predict if a file contains text that was written by Shakespeare. Run the file:
+Download the data for this assignment: [shakespeare](shakespeare.zip). To kick you off, this `.zip` contains some example code. The file `unique-word-classifier.py` contains a program that will predict if a file contains text that was written by Shakespeare. Run the file:
 
     $ python unique-word-classifier.py
 
