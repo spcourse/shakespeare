@@ -1,6 +1,6 @@
 # Optimize the unique words classifier
 
-As you saw in the previous part, for the file `shakespeare.0350.txt`, to be classified correctly, the threshold needs to be 0.05 or lower. But for other files the best threshold for correct classification might be different. In general, if we set the threshold too high the algorithm will be too strict and classify text fragments that are written by Shakespeare as being from another author. But if we set the threshold too low, it will be too lenient and incorrectly classify text fragments written by other authors as written by Shakespeare.
+As you saw in the previous part, for the file `shakespeare.0350.txt`, to be classified correctly, the threshold needs to be 0.05 or lower. But for other files the best threshold for correct classification might be different. In general, if we set the threshold too high the algorithm will be too strict and classify text fragments that are written by Shakespeare as being from another author (false negatives). But if we set the threshold too low, it will be too lenient and incorrectly classify text fragments written by other authors as written by Shakespeare (false positives).
 
 So there must be some goldilocks setting for this threshold parameter. **Which threshold gives the highest accuracy?**
 
@@ -50,7 +50,7 @@ It means that the prediction of the second text fragment (`'jonson.0010.txt'`) i
 
 The accuracy is simply the amount of correct predictions divided by the total amount of predictions.
 
-The best would be to create a function `calculate_accuracy(actual, predicted)` to compute the accuracy of the predictions.
+Create a function `calculate_accuracy(actual, predicted)` to compute the accuracy of the predictions.
 
 #### Step 5
 

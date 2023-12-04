@@ -22,6 +22,11 @@ In this module, we will implement two distinct methods for determining whether a
 
 Both approaches revolve around analyzing the vocabulary used.
 
-For the first approach, we will compile a set of words that are characteristic of texts written by Shakespeare. For instance, 'Macbeth' might be a word exclusive to Shakespeare's usage, whereas the term 'speed' is likely used by many other writers. In this approach, we will classify text fragments by counting the number of these distinct Shakespearean words they contain.
+For the first approach, we will compile a set of words that are characteristic of texts written by Shakespeare. For instance, 'Macbeth' might be a word exclusive to Shakespeare's usage, whereas the term 'speed' is likely used by many other writers. In this approach, we will classify text fragments by counting the number of these **unique** Shakespearean words they contain.
 
-The second approach is somewhat similar but slightly more complex. Words will be assigned scores that indicate their relevance to Shakespearean writing. For instance, 'Macbeth' has a relatively high score of 0.017, suggesting its strong association with Shakespeare's works. On the other hand, 'speed' has a relatively low score of 0.003, implying its potential usage by various authors. Furthermore, 'villain' obtains an intermediate score of 0.007, suggesting it could signify Shakespearean writing to some extent, though not definitively.
+The second approach is somewhat similar but slightly more complex. Words will be assigned scores that indicate their relevance to Shakespearean writing. For instance, 'Macbeth' has a relatively high score of 0.017, suggesting a strong association with Shakespeare's writing (i.e., Shakespeare uses that word more frequently than other writers). On the other hand, 'speed' has a relatively low score of 0.003, suggesting that Shakespeare doesn't use that word more frequently than other writers. For the scores we use a metric called Term Frequency - Inverse Document Frequency (**TF-IDF**)
+
+This implementation of both algorithm is split up in several phases:
+- Algorithm 1 (unique words). You are provided with a list of words that are unique to Shakespeare and code that can classify a single document.
+    - Optimize the provided code. The provided code is quite slow. Make sure it works fast enough to run on large datasets.
+    - 

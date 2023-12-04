@@ -1,4 +1,4 @@
-# Optimize the unique words classifier
+# Unique words part 1: optimize the classifier
 
 The aim is to program a classifier capable of deciding if text fragments are written by Shakespeare. This task involves a set of words characteristic of Shakespearean writing to categorize the fragments.
 
@@ -16,8 +16,7 @@ This text would yield a _Shakespeare score_ of approximately $$0.139$$, as it co
 
 Assuming that higher scores indicate a higher likelihood of Shakespearean authorship, while lower scores indicate the opposite, we can formulate a simple classification mechanism. This involves setting a threshold (e.g., $$0.02$$). For all texts with a higher score than this threshold, we predict them as having been written by Shakespeare. So the provided text would be positively classified (as Shakespearean) because it has score higher score than $$0.02$$ (i.e., $$0.139$$).
 
-This algorithm will be implemented through several phases. Initially (phase 1), a precomputed compilation of Shakespearean words will be provided. The task involves using this compilation to calculate the _Shakespeare score_ for a given text and then categorizing it based on a designated threshold. After this (phase 2), you will write an algorithm to generate the list of Shakespearean words from a set of provided text fragments.
-
+In this assignment you will be provided with a precomputed compilation of Shakespearean words and some code that can apply the algorithm as described above to a single document. However, the provided algorithm is quite slow. Your task for this assignment will be to optimize the algorithm.
 
 ## Provided example.
 
@@ -93,4 +92,4 @@ Tips:
         """, number=1000)
         print(time)
 
-    This will run the function a 1000 times and print the total running time. The precise numbers will depend a lot on the machine you are running your code on. But on my machine, the running time before optimization is around 2 seconds and after optimization it is around 0.03 seconds. **So it runs two orders of magnitudes faster, by using sets.**
+    This will run the function a 1000 times and print the total running time. The precise running time will depend on the machine you are running your code on. But on my machine, the running time before optimization is around 2 seconds and after optimization it is around 0.03 seconds. **So it runs two orders of magnitudes faster, just by using sets.**
