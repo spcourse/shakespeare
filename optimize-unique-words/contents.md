@@ -73,21 +73,23 @@ The provided code contains the following functions:
 
 In the end we would like to have an algorithm that can classify all text fragments from `test-set` and assess how well it performs for **all** fragments. One obstacle is that the code we have provided is hopelessly inefficient. Especially the function `calculate_shakespeare_score` is very inefficient. Currently it has a running time complexity of $$O(N^2)$$. This could be reduced to $$O(N)$$
 
-Your task is to optimize this function.
+Your task is to optimize this function by eliminating the `for`-loops and use `sets` instead.
 
 Tips:
 
-* You can do this by using Python `set`s in the right places,
-* Even though you're interested in only the running time of `calculate_shakespeare_score` it might require adaptations elsewhere in the code.
-* If done correctly, the modifications should make the code shorter and clearer, not more complicated.
-* You can test the running time of the function `calculate_shakespeare_score` using the `timeit` library. Add the following code at the end of your file:
+* At the moment `calculate_shakespeare_score` contains two `for`-loops. And both `for`-loops use `in` to search an element in a list. This makes both loops have a complexity of $$O(N)^2$$.
+* Think about what these two `for`-loops do and how this can be done by using `sets` instead.
+* This assignment should require very little programming. It's really about understanding the problem and the working of `sets`.
+* If done correctly, the modifications should make the code much shorter and clearer, not more complicated.
+* You only need to modify `calculate_shakespeare_score`. Nothing else.
+* To classify a text fragment, your code could run about a 100 times faster after optimizing it. You can test the running time of the function `calculate_shakespeare_score` using the `timeit` library. Add the following code at the end of your file:
 
         import timeit
         time = timeit.timeit("calculate_shakespeare_score(text, shakespeare_words)",
         setup =
         """from __main__ import load_shakespeare_words, calculate_shakespeare_score
         shakespeare_words = load_shakespeare_words("shakespeare-words.txt")
-        with open('test-set\shakespeare.0350.txt', 'r') as file:
+        with open('./test-set/shakespeare.0350.txt', 'r') as file:
             text = file.read()
         """, number=1000)
         print(time)
