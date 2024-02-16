@@ -54,7 +54,7 @@ $$
 The _Inverse Document Frequency_ of a word is computed by counting the total number of words in **all** text fragments (so, not only those written by Shakespeare) and dividing this by how often the word occurs in **all** documents and finally taking the log `math.log()` of the result:
 
 $$
-IDF(word) = \log(\frac{\mathrm{total number of words in all text fragments}}{\mathrm{number of occurrences of word in all text fragments}})
+IDF(word) = \ln(\frac{\textrm{total number of words in all text fragments}}{\textrm{number of occurrences of word in all text fragments}})
 $$  
 
 The TF-IDF score is computed my multiplying the two scores above:
