@@ -1,4 +1,4 @@
-# Datastructures
+# Data structures
 
 The goal of this part is to get more familiar with the Python datastructures `set` and `dictionary`.
 
