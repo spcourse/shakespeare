@@ -12,6 +12,11 @@ Create a function named `count_lemmas(text, lemmas)`. The function should count 
 
 The text parameter is a string containing the text to be analyzed. The function should split (use `.split()`) the text into words; remove any punctuation marks (use `.strip()`); and convert to lowercase (`.lower()`). If the word exists in the `lemmas` dictionary, count the lemma, not the word itself.
 
+You can use the function `tokenize(text)` below to convert the input text into a list of words:
+
+    def tokenize(text):
+        return [word.strip(" ,\n.);(!?)'").lower() for word in text.split(' ')]
+
 Example usage:
 
     text = "He is, was and will be a runner. And runners ran, run and will always run. This is their nature."
@@ -130,7 +135,7 @@ This should give the following output:
 
 ### 7. Sentiment
 
-Write a Python function called `sentiment_of_text(text, sentiment_of_word)` that takes a text string and a dictionary of word sentiments as input and returns the overall sentiment score of the text. The sentiment score is calculated as the sum of sentiment scores for individual words in the text using the provided `sentiment_of_word` dictionary. You may assume that words that cannot be found in the dictionary have a sentiment score of 0. You can use the `tokenize()` function of the previous assignment.
+Write a Python function called `sentiment_of_text(text, sentiment_of_word)` that takes a text string and a dictionary of word sentiments as input and returns the overall sentiment score of the text. The sentiment score is calculated as the sum of sentiment scores for individual words in the text using the provided `sentiment_of_word` dictionary. You may assume that words that cannot be found in the dictionary have a sentiment score of 0. You can use the `tokenize()` function of the first assignment.
 
 This is the `sentiment_of_word` dictionary:
 
