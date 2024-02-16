@@ -78,7 +78,7 @@ Expected output:
 
 ### 4. Unify
 
-The first function is `unify(dict1, dict2)`. It combines two such dictionaries. It should return a dictionary that contain all items (key-value pairs) from both dictionaries. If a key occurs in both input dictionaries, unify the corresponding lists. The value lists of the output should remain sorted and not contain any duplicates.
+The first function is `unify(dict1, dict2)`. It combines two dictionaries. It should return a dictionary that contain all items (key-value pairs) from both dictionaries. If a key occurs in both input dictionaries, unify the corresponding lists. The value lists of the output should remain sorted and not contain any duplicates.
 
 Example usage:
 
@@ -164,6 +164,6 @@ Expected output:
 
 ## Test
 
-You can verufy your results with:
+You can verify your results with:
 
 checkpy datastructures
