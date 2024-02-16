@@ -15,7 +15,7 @@ With this list, we can evaluate the following text and assign it a score based o
 This text would yield a _Shakespeare score_ of approximately $$0.139$$: It contains 4 distinct words from the Shakespearean word list (note that *beggarly* appears twice, but multiple occurrences are not counted at this stage). The total count of unique words in the text is $$29$$, yielding a score of $$4/29 \approx 0.139$$. In genereal, the Shakespeare score is computed as follows:
 
 $$
-\textrm{Shakespeare score} = \frac\textrm{unique Shakespeare words in text}\textrm{unique words in text}
+\textrm{Shakespeare score} = \frac{\textrm{unique Shakespeare words in text}}{\textrm{unique words in text}}
 $$
 
 Assuming that higher scores indicate a higher likelihood of Shakespearean authorship, while lower scores indicate the opposite, we can formulate a simple classification mechanism. This involves setting a threshold (e.g., $$0.02$$). For all texts with a higher score than this threshold, we predict them as having been written by Shakespeare. So the provided text would be positively classified (as Shakespearean) because it has score higher score than $$0.02$$ (i.e., $$0.139$$).
