@@ -12,7 +12,11 @@ With this list, we can evaluate the following text and assign it a score based o
 
 "In the **halcyon** days of yore, we reveled amidst fields of golden **darnel**, a **beggarly** intrusion among nature's grandeur. The mirthful melodies of the **wassail** danced upon the breeze, while **beggarly** worries scattered like autumn leaves."
 
-This text would yield a _Shakespeare score_ of approximately $$0.139$$, as it contains 4 distinct words from the Shakespearean word list (note that *beggarly* appears twice, but multiple occurrences are not counted at this stage). The total count of unique words in the text is $$29$$, yielding a score of $$4/29 \approx 0.139$$.
+This text would yield a _Shakespeare score_ of approximately $$0.139$$: It contains 4 distinct words from the Shakespearean word list (note that *beggarly* appears twice, but multiple occurrences are not counted at this stage). The total count of unique words in the text is $$29$$, yielding a score of $$4/29 \approx 0.139$$. In genereal, the Shakespeare score is computed as follows:
+
+$$
+\textrm{Shakespeare score} = \frac\textrm{unique Shakespeare words in text}\textrm{unique words in text}
+$$
 
 Assuming that higher scores indicate a higher likelihood of Shakespearean authorship, while lower scores indicate the opposite, we can formulate a simple classification mechanism. This involves setting a threshold (e.g., $$0.02$$). For all texts with a higher score than this threshold, we predict them as having been written by Shakespeare. So the provided text would be positively classified (as Shakespearean) because it has score higher score than $$0.02$$ (i.e., $$0.139$$).
 
@@ -77,7 +81,7 @@ Your task is to optimize this function by eliminating the `for`-loops and use `s
 
 Tips:
 
-* At the moment `calculate_shakespeare_score` contains two `for`-loops. And both `for`-loops use `in` to search an element in a list. This makes both loops have a complexity of $$O(N)^2$$.
+* At the moment `calculate_shakespeare_score` contains two `for`-loops. And both `for`-loops use `in` to search an element in a list. This makes that both loops have a complexity of $$O(N)^2$$.
 * Think about what these two `for`-loops do and how this can be done by using `sets` instead.
 * This assignment should require very little programming. It's really about understanding the problem and the working of `sets`.
 * If done correctly, the modifications should make the code much shorter and clearer, not more complicated.
