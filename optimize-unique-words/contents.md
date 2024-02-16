@@ -12,7 +12,7 @@ With this list, we can evaluate the following text and assign it a score based o
 
 "In the **halcyon** days of yore, we reveled amidst fields of golden **darnel**, a **beggarly** intrusion among nature's grandeur. The mirthful melodies of the **wassail** danced upon the breeze, while **beggarly** worries scattered like autumn leaves."
 
-This text would yield a _Shakespeare score_ of approximately $$0.139$$: It contains 4 distinct words from the Shakespearean word list (note that *beggarly* appears twice, but multiple occurrences are not counted at this stage). The total count of unique words in the text is $$29$$, yielding a score of $$4/29 \approx 0.139$$. In genereal, the Shakespeare score is computed as follows:
+This text would yield a _Shakespeare score_ of approximately $$0.139$$: It contains 4 distinct words from the Shakespearean word list (note that *beggarly* appears twice, but multiple occurrences are not counted at this stage). The total count of unique words in the text is $$29$$, yielding a score of $$4/29 \approx 0.139$$. In general, the Shakespeare score is computed as follows:
 
 $$
 \textrm{Shakespeare score} = \frac{\textrm{unique Shakespeare words in text}}{\textrm{unique words in text}}
@@ -40,7 +40,7 @@ The program takes an arbitrary file from the folder `test-set` and predicts whet
 
 As you can tell from the output we test the algorithm on file `shakespeare.0350.txt`. This file contains a text fragment that was actually written by Shakespeare.
 
-You see that the code tries out different threshold for the prediction. With thresholds of $$0.05$$ or lower for the _Shakespeare score_ we predict correctly that Shakespeare is the author of this text fragment. If we would take a higher threshold ($$0.1$$ or above) the algorithm would not give the correct prediction. So based on only this text fragment we could conclude that the threshold should be around $$0.05$$, but that is based on only one text fragment. For other fragments this score might differ. One of the challenges of this module is to find the optimal threshold that works for all text fragments.
+You see that the code tries out different threshold for the prediction. With thresholds of $$0.05$$ or lower for the _Shakespeare score_ we predict correctly that Shakespeare is the author of this text fragment. If we would take a higher threshold ($$0.1$$ or above) the algorithm would not give the correct prediction. So based on only this text fragment we could conclude that the threshold should be around $$0.05$$, but that is based on only one text fragment. For other fragments this score might differ. One of the challenges of the upcoming few assignments is to find the optimal threshold that works for all text fragments.
 
 ### Explanation of code.
 

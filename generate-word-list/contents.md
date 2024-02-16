@@ -23,23 +23,19 @@ Create a file named `generate-word-list.py`. In this file, you will develop an a
 
 You can verify your outcomes by comparing your file to the provided one using the command line `diff` tool. Enter the following command in the console:
 
-```
-diff shakespeare-words.txt my-shakespeare-words.txt
-```
+    diff shakespeare-words.txt my-shakespeare-words.txt
 
 You can reuse some of the functions from the previous assignment here. Copy the following functions over to `generate-shakespeare-word-list.py`: `get_text_file_names`, and `tokenize_text`.
 
 Just like in the previous assignment, use a `main` function with the following structure:
 
-```
-def main():
-    # main code ...
+    def main():
+        # main code ...
 
-# other functions
+    # other functions
 
-if __name__ == "__main__":
-    main()
-```
+    if __name__ == "__main__":
+        main()
 
 ## Option 2: Generate TF-IDF scores
 
@@ -52,7 +48,7 @@ The TF-IDF score consists of two part: _Term Frequency_ (TF - indicating how oft
 The _Term Frequency_ of a word is computed by counting how frequently it occurs in texts of Shakespeare:
 
 $$
-TF(word) = \frac{\mathrm{number of occurrences of word in all the text fragments written by Shakespeare}}{\mathrm{total number of words in all the text fragments written by Shakespeare}}
+TF(word) = \frac{\textrm{number of occurrences of word in all the text fragments written by Shakespeare}}{\textrm{total number of words in all the text fragments written by Shakespeare}}
 $$
 
 The _Inverse Document Frequency_ of a word is computed by counting the total number of words in **all** text fragments (so, not only those written by Shakespeare) and dividing this by how often the word occurs in **all** documents and finally taking the log `math.log()` of the result:
@@ -84,12 +80,11 @@ You can verify your outcomes by comparing scores from your `my-shakespeare-tf-id
 
 Just like in the previous assignment, use a `main` function with the following structure:
 
-```
-def main():
-    # main code ...
 
-# other functions
+    def main():
+        # main code ...
 
-if __name__ == "__main__":
-    main()
-```
+    # other functions
+
+    if __name__ == "__main__":
+        main()
