@@ -6,7 +6,7 @@ Instead of the binary categorization of words of either being typical of Shakesp
 
 We can apply a similar approach to analyze text fragments and use TF-IDF to figure out how distinctive a word is in Shakespeare's writing.
 
-Once we have these scores, we have various options to classify text fragments based on them. However, for this task, let's keep it simple: We'll just add up the scores for each word in the text portion to get the overall score of that part. Consider the following TF-IDF scores:
+Once we have these scores, we have various options to classify text fragments based on them. However, for this task, let's keep it simple: We'll just average out the scores for each word in the text portion to get the overall score of that part. Consider the following TF-IDF scores:
 
     thy, 0.058
     love, 0.046
@@ -14,7 +14,7 @@ Once we have these scores, we have various options to classify text fragments ba
     and, 0
     cat, 0
 
-Using these scores, the text fragment "Love thy neighbor and thy cat" receives a total score of $$0.046 + 0.058 + 0 + 0 + 0.058 + 0 = 0.162$$. It's important to note that (unlike the previous task), repeated occurrences of a word in the text portion are included in this calculation.
+Using these scores, the text fragment "Love thy neighbor and thy cat" receives a total score of $$(0.046 + 0.058 + 0 + 0 + 0.058 + 0)/6 = 0.027$$. It's important to note that (unlike the previous task), repeated occurrences of a word in the text portion are included in this calculation.
 
 Once we establish a score for a text fragment, we can use the same method as before by using a specific threshold to determine whether the text was written by Shakespeare or not.
 
@@ -48,7 +48,7 @@ The process for classifying text fragments is similar to the previous assignment
 ### Step 2
 
 - **Implement** a function `load_shakespeare_tf_idf_scores()` that reads the file `shakespeare-tf-idf.csv`, retrieves the TF-IDF scores for Shakespearean writing, and returns them as a `dictionary`. The dictionary should have the words as keys and the TF-IDF score as a `float` value.
-- **Implement** a function `calculate_shakespeare_score(text, shakespeare_scored_words)` that calculates the _Shakespeare score_ for a given text using the `tokenize_text()` function you previously wrote.
+- **Implement** a function `calculate_shakespeare_score(text, shakespeare_scored_words)` that calculates the _Shakespeare score_ for a given text using the `tokenize_text()` function you previously wrote. The total score of a text is the *average of the scores for each word* in the text. For words that don't appear in the `shakespeare_scored_words` dictionary you may assume the score is 0. 
 - In the `main`, create a couple of test cases to make sure `load_shakespeare_tf_idf_scores()` and `calculate_shakespeare_score()` works as you would expect.
 
 ### Step 3
