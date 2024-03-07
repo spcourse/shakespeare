@@ -93,7 +93,7 @@ Tips:
         setup =
         """from __main__ import load_shakespeare_words, calculate_shakespeare_score
         shakespeare_words = load_shakespeare_words("shakespeare-words.txt")
-        with open('./test-set/shakespeare.0350.txt', 'r') as file:
+        with open('./test-set/shakespeare.0350.txt', 'r', encoding='UTF-8') as file:
             text = file.read()
         """, number=1000)
         print(time)
