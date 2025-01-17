@@ -44,4 +44,4 @@ This module consist of a number of steps:
     - Optimize the provided code. The provided code is quite slow. Make sure it works fast enough to run on large datasets.
     - Extend the code to work for multiple documents.
 - Algorithm 2 (TF-IDF): Implement a classifier using the second algorithm.
-- Algorithm 1 or 2 (BONUS): Create your own word lists to be used in either algorithm 1 or 2. 
+- Algorithm 1 or 2 (BONUS): Create your own word lists to be used in either algorithm 1 or 2.
