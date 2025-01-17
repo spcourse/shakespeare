@@ -74,7 +74,7 @@ A metric called Term Frequency - Inverse Document Frequency (**TF-IDF**) perfect
 The score will be based on how often the word appears in our sample texts (_count_) and the frequency of the word in the English language (_freq_) as given by `unigram.txt`. The score of the word is given by:
 
 $$
-\textrm{score}(word) = count * ln(\frac{50}{freq})
+\textrm{score}_\textrm{word} = \textrm{count}_\textrm{word} * ln(\frac{50}{\textrm{freq}_\textrm{word}})
 $$
 
 ### Tokenizing
