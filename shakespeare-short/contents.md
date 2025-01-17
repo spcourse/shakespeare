@@ -71,7 +71,7 @@ We want the final scores to reflect how typical the word is for Shakespeare. For
 
 A metric called Term Frequency - Inverse Document Frequency (**TF-IDF**) perfectly captures these intuitions, but can not be directly applied to our case so we will create our own metric that is loosely based on TF-IDF.
 
-The score will be based on how often the word appears in our sample texts (_count_) and the frequency of the word in the English language (_freq_) as given by `unigram.txt`. The score of the word is given by:
+The score will be based on how often the word appears in our sample texts ($$\textrm{count}$$) and the frequency of the word in the English language ($$\textrm{freq}$$) as given by `unigram.txt`. The $$\textrm{score}$$ of the word is given by:
 
 $$
 \textrm{score}_\textrm{word} = \textrm{count}_\textrm{word} * ln(\frac{50}{\textrm{freq}_\textrm{word}})
