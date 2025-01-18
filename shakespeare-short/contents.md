@@ -18,7 +18,7 @@ The authors of the book describe their use of various techniques to characterize
 
 ## Goal
 
-For this module you're just going to dip your toes in the water: You're going create a vocabulary profile for Shakespeare texts. So, we want to create a list of scored words, where the score reflects how typical the word is for Shakespeare. The idea is that this list of scored words could then later be used to identify Shakespearean writing, but that's beyond the scope of this assignment.
+For this module you're just going to dip your toes in the water: You're going to create a vocabulary profile for Shakespeare texts. So, we want to create a list of scored words, where the score reflects how typical the word is for Shakespeare. The idea is that this list of scored words could then later be used to identify Shakespearean writing, but that's beyond the scope of this assignment.
 
 ### The data
 
@@ -28,7 +28,9 @@ You'll need to download the following two text fragments: [shakespeare-texts1.tx
 
     ...
 
-You will also need to download [unigram.csv](unigram.csv). This is a csv-file containing 333.333 words from the English language and their frequency (given a specific data-set):
+(source: [Project Gutenberg](hhttps://www.gutenberg.org/))
+
+You will also need to download [unigram.csv](unigram.csv). This is a CSV file containing 333.333 words from the English language and their frequency (given a specific data set):
 
     the,23135851162
     of,13151942776
@@ -40,7 +42,9 @@ You will also need to download [unigram.csv](unigram.csv). This is a csv-file co
     gollgo,12711
     golgw,12711
 
-The goal is that given this data you want to compute scores that reflect how typical a score is for Shakespearean writing:
+(source: [Linguistic Data Consortium](https://www.kaggle.com/datasets/rtatman/english-word-frequency?resource=download))
+
+The goal is that, given this data, you want to compute scores that reflect how typical a score is for Shakespearean writing:
 
     mephistophilis,23.47
     launcelet,19.56
@@ -54,24 +58,26 @@ The goal is that given this data you want to compute scores that reflect how typ
     and,-11625.61
     the,-14325.99
 
+The word 'mephistophilis' has a high score, meaning that it characterizes Shakespeare's texts very well, whereas the word 'the' has a very low score, meaning that it is not at all specific to Shakespeare's texts.
+
 ### The program
 
 You will need to do this in a couple of steps:
 
 1. Tokenize each text file (convert into a list of cleaned-up lowercase words).
-2. For each text file create a dictionary with the frequency of each word in the file. We call such a dictionary a bag of words (bow).
-3. Merge the two bow-dictionaries into one.
+2. For each text file, create a dictionary with the frequency of each word in the file. We call such a dictionary a Bag-of-Words (BoW).
+3. Merge the two BoW-dictionaries into one.
 4. Read the word frequencies from `unigram.csv` into a word frequency dictionary.
 5. Use the bow and word frequency dictionary to create a dictionary containing the score for each word, using the metric described in the next section.
 6. Sort the word scores and write to a file.
 
 ### The score
 
-We want the final scores to reflect how typical the word is for Shakespeare. For example the word 'littlewit' is typical for Shakespearean texts as he uses it frequently, but it is not a common word in English, so this should receive a high score. Whereas 'table' should receive a low score, because even though Shakespeare has undoubtedly used this word frequently, it is not particularly unique to his works.
+We want the final scores to reflect how typical the word is for Shakespeare. For example, the word 'littlewit' is typical for Shakespearean texts as he uses it frequently, but it is not a common word in English, so this should receive a high score. Whereas 'table' should receive a low score, because even though Shakespeare has undoubtedly used this word frequently, it is not particularly unique to his works.
 
-A metric called Term Frequency - Inverse Document Frequency (**TF-IDF**) perfectly captures these intuitions, but can not be directly applied to our case so we will create our own metric that is loosely based on TF-IDF.
+A metric called Term Frequency - Inverse Document Frequency (**TF-IDF**) perfectly captures these intuitions, but cannot be directly applied to our case, so we will create our own metric that is loosely based on TF-IDF.
 
-The score will be based on how often the word appears in our sample texts ($$\textrm{count}$$) and the frequency of the word in the English language ($$\textrm{freq}$$) as given by `unigram.txt`. The $$\textrm{score}$$ of the word is given by:
+The score will be based on how often the word appears in our sample texts ($$\textrm{count}$$) and the frequency of the word in the English language ($$\textrm{freq}$$) as given by `unigram.csv`. The $$\textrm{score}$$ of the word is given by:
 
 $$
 \textrm{score}_\textrm{word} = \textrm{count}_\textrm{word} * ln(\frac{50}{\textrm{freq}_\textrm{word}})
@@ -79,7 +85,7 @@ $$
 
 ### Tokenizing
 
-You can use the following function to tokenize the text from the text files:
+Use the following function to tokenize the text from the text files:
 
     def tokenize_text(text):
         """
@@ -103,4 +109,4 @@ You can use the following function to tokenize the text from the text files:
 
 ### Testing
 
-Todo
+TODO
