@@ -44,7 +44,7 @@ You will also need to download [unigram.csv](unigram.csv). This is a CSV file co
 
 (source: [Linguistic Data Consortium](https://www.kaggle.com/datasets/rtatman/english-word-frequency?resource=download))
 
-The goal is that, given this data, you want to compute scores that reflect how typical a score is for Shakespearean writing:
+The goal is to, given this data, compute scores that reflect how typical a score is for Shakespearean writing:
 
     mephistophilis,23.47
     launcelet,19.56
