@@ -66,3 +66,7 @@ In this function:
 #### Step 3
 
 Once you have the function above working, use values between 0 and 0.1 in 40 steps for the thresholds and visualize the results to determine the optimal threshold.
+
+## Test
+
+checkpy unique-word-classifier

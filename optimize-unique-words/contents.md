@@ -99,3 +99,10 @@ Tips:
         print(time)
 
     This will run the function a 1000 times and print the total running time. The precise running time will depend on the machine you are running your code on. But on my machine, the running time before optimization is around 2 seconds and after optimization it is around 0.03 seconds. **So it runs two orders of magnitudes faster, just by using sets.**
+
+
+## Test
+
+Only the first two tests should pass. The later two tests are for the next assignment.
+
+    checkpy unique-word-classifier
