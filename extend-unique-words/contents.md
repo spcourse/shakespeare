@@ -49,11 +49,11 @@ In this function:
 
 * You can now use the function `calculate_shakespeare_score(text, shakspeare_words)` to compute for each text fragment the _Shakespeare score_. With the chosen threshold you can now predict for each file if it was or wasn't written by Shakespeare. This should also generate a list of booleans: `[False, True, ...]` where `True` means that the algorithm predicts that the corresponding file is written by Shakespeare and `False` means it isn't.
 
-* In an ideal situation the list of booleans from the previous two steps are the same. That means that for every text fragment the actual authorship and the predicted one are the same, giving an accuracy of 1. In reality this will never be the case. The prediction will be never be perfect. If for example in step 2 we got:
+* In an ideal situation the list of booleans from the previous two steps are the same. That means that for every text fragment the actual authorship and the predicted one are the same, giving an accuracy of 1. In reality this will never be the case. The prediction will be never be perfect. If for example the actual values are:
 
       [False, False, ...]
 
-  and in step 3:
+  And the predicted values are:
 
       [False, True, ...]
 
