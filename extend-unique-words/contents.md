@@ -69,4 +69,4 @@ Once you have the function above working, use values between 0 and 0.1 in 40 ste
 
 ## Test
 
-checkpy unique-word-classifier
+    checkpy unique-word-classifier
