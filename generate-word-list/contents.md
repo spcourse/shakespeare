@@ -71,7 +71,7 @@ Create a file named `generate-tf-idf.py`. In this file, you will develop an algo
 
 1. Create a function `count_words(file_names)`. That given a set of files returns a dictionary with a count for each word in set of files.
 2. Identify all text documents within the `training-set` directory and store these in a list called `all_files`. You might want to use `get_text_file_names()` from previous assignments here.
-3. Create a list of file_names from `training-set` containing only and store these in a list called `shakespeare_files`. You might want to use `is_written_by_shakespeare()` from previous assignments.
+3. Create a list of file_names from `training-set` containing only texts written by Shakespeare and store these in a list called `shakespeare_files`. You might want to use `is_written_by_shakespeare()` from previous assignments.
 5. Use the `count_words()` function on both `all_files` and `shakespeare_files`, creating two dictionaries `word_count_all` and `word_count_shakespeare`.
 6. Write a function called `compute_tf_idf(word_count_all, word_count_shakespeare)` that computes the TF-IDF score of each word based on the given word count dictionaries, the result should be returned as a dictionary.
 7. Write the results in comma separated format to the file `my-shakespeare-tf-idf.csv`.
